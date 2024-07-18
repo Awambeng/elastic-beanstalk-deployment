@@ -2,10 +2,15 @@ name: Deploy Verifier on ECS
 
 on:
   push:
-    branches: [ "29-deploy-stagging-environment-for-eudiw-verifier" ]
+    branches: [ "master" ]
   pull_request:
     branches: [ "develop" ]
     types: [ "closed" ]
+
+env:
+  REGISTRY: 917848404243.dkr.ecr.eu-north-1.amazonaws.com
+  IMAGE_NAME: eudiw-verifier-staging
+
 
 jobs:
   build-and-deploy:
